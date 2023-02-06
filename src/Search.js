@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Results from "./Results.js";
 
 export default function Search() {
   const [keyword, setKeyword] = useState("");
+  const [results, setResults] = useState(null);
 
   function getKeyword(event) {
     const keyword = event.target.value;
@@ -10,7 +12,8 @@ export default function Search() {
   }
 
   function handleResponse(response) {
-    console.log(response.data[0]);
+    let wordObject = response.data[0];
+    setResults(wordObject);
   }
 
   function getUrl(event) {
@@ -29,8 +32,11 @@ export default function Search() {
           placeholder="search for a word..."
           onChange={getKeyword}
         ></input>
-        <button type="submit">Search</button>
+        <button type="submit" className="button">
+          Search
+        </button>
       </form>
+      <Results results={results} />
     </div>
   );
 }
