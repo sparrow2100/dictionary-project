@@ -11,7 +11,7 @@ export default function Results(props) {
         <div className="phonetics">
           <p>{props.results.phonetic}</p>
           <a
-            href={props.results.phonetics[0].audio}
+            href={props.results.phonetics.find((p) => p.audio.length > 0).audio}
             target="_blank"
             rel="noreferrer"
           >
