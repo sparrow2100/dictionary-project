@@ -57,7 +57,7 @@ export default function Search() {
         </form>
         <Results results={results} />
       </div>
-      <Photos pictures={pictures} />
+      <Photos pictures={pictures} keyword={keyword} />
     </div>
   );
 }

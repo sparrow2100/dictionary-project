@@ -6,7 +6,9 @@ export default function Photos(props) {
     return (
       <div className="photos">
         {props.pictures.map(function (photo, index) {
-          return <img src={photo.src.landscape} key={index} />;
+          return (
+            <img src={photo.src.landscape} key={index} alt={props.keyword} />
+          );
         })}
       </div>
     );
