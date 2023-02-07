@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Synonyms(props) {
   console.log(props);
-  if (props.synonyms) {
+  if (props.synonyms.length > 0) {
     return (
       <div className="synonyms">
         <h3>synonyms:</h3>
@@ -14,6 +14,6 @@ export default function Synonyms(props) {
       </div>
     );
   } else {
-    return <p>N/A</p>;
+    return null;
   }
 }
