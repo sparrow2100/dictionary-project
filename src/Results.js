@@ -7,19 +7,23 @@ export default function Results(props) {
     return (
       <div className="results">
         <h2>{props.results.word}</h2>
-        <h3>{props.results.meanings[0].partOfSpeech}</h3>
-        <div className="phonetics">
-          <p>{props.results.phonetic}</p>
-          <a
-            href={props.results.phonetics.find((p) => p.audio.length > 0).audio}
-            target="_blank"
-            rel="noreferrer"
-          >
-            🎧
-          </a>
-        </div>
+        <div className="infoOne">
+          <h3>{props.results.meanings[0].partOfSpeech}</h3>
+          <div className="phonetics">
+            <p className="pronunciation">{props.results.phonetic}</p>
+            <a
+              href={
+                props.results.phonetics.find((p) => p.audio.length > 0).audio
+              }
+              target="_blank"
+              rel="noreferrer"
+            >
+              🎧
+            </a>
+          </div>
 
-        <p>{props.results.meanings[0].definitions[0].definition}</p>
+          <p>{props.results.meanings[0].definitions[0].definition}</p>
+        </div>
         <Synonyms synonyms={props.results.meanings[0].synonyms} />
       </div>
     );

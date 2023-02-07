@@ -24,19 +24,21 @@ export default function Search() {
 
   return (
     <div className="App">
-      <h1>Dictionary</h1>
-      <form onSubmit={getUrl}>
-        <input
-          className="search"
-          type="search"
-          placeholder="search for a word..."
-          onChange={getKeyword}
-        ></input>
-        <button type="submit" className="button">
-          Search
-        </button>
-      </form>
-      <Results results={results} />
+      <div className="content">
+        <h1>Dictionary</h1>
+        <form onSubmit={getUrl}>
+          <input
+            className="search"
+            type="search"
+            placeholder="search for a word..."
+            onChange={getKeyword}
+          ></input>
+          <button type="submit" className="button">
+            Search
+          </button>
+        </form>
+        <Results results={results} />
+      </div>
     </div>
   );
 }
