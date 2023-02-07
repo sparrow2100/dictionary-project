@@ -10,7 +10,11 @@ export default function Results(props) {
         <h3>{props.results.meanings[0].partOfSpeech}</h3>
         <div className="phonetics">
           <p>{props.results.phonetic}</p>
-          <a href={props.results.phonetics[0].audio} target="_blank">
+          <a
+            href={props.results.phonetics[0].audio}
+            target="_blank"
+            rel="noreferrer"
+          >
             🎧
           </a>
         </div>
